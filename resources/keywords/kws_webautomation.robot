@@ -53,12 +53,31 @@ Clicar em "Sign in"
     Click Element       xpath=//*[@class='nav']//*[@class='login']
 
 informar um e-mail válido "${EMAIL}"
-    Input Text          //*[@class='col-xs-12 col-sm-6']//*[@id='email_create']       ${EMAIL}
+    Wait until Element is Visible       id=create-account_form
+    Input Text                          id=email_create     ${EMAIL}
 
 Clicar em "Create an account"
-
+    Click Button                        id=SubmitCreate
 Preencher os dados obrigatórios
 
+    Wait until Element is Visible       id=account-creation_form
+    Click Element                       id=id_gender1
+    Input Text                          xpath=//*[@id='customer_firstname']     John
+    Input Text                          xpath=//*[@id='customer_lastname']      Mayer
+    Input Text                          xpath=//*[@id='passwd']                 0o9i8u7y
+    Input Text                          id=firstname        John
+    Input Text                          id=lastname         Mayer
+    Input Text                          id=address1         Kailua, Hawaii 96734
+    Input Text                          id=city             Canada
+    Click Element                       id=id_state
+    Click Element                       xpath=//option[contains(text(), 'Alabama')]
+    Input Text                          id=postcode         10005
+    Input Text                          id=phone_mobile     (808) 266-1222
+    Input TExt                          id=alias            J.M
+
 Submeter cadastro
+    Click Button                        id=submitAccount
 
 Conferir se o cadastro foi efetuado com sucesso
+    ${USER}             Get Text        xpath=//div[@class='header_user_info']//span[contains(text(),'John Mayer')]
+    Should Be Equal     John Mayer      ${USER}
