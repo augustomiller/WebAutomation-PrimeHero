@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.9.6 on darwin)" generated="20211021 11:54:03.871" rpa="false" schemaversion="2">
+<suite id="s1" name="Webautomation" source="/Users/maicmiller/Documents/GitHub/WebAutomation-PrimeHero/tests/webautomation.robot">
+<test id="s1-t1" name="Caso de teste 04: Adicionar Cliente">
+<kw name="Abrir navegador" library="kws_webautomation" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211021 11:54:04.185" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20211021 11:54:04.184" endtime="20211021 11:54:06.944"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211021 11:54:06.944" endtime="20211021 11:54:07.096"/>
+</kw>
+<status status="PASS" starttime="20211021 11:54:04.184" endtime="20211021 11:54:07.097"/>
+</kw>
+<kw name="Acessar a página home do site Automation Practice" library="kws_webautomation">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211021 11:54:07.100" level="INFO">Opening url 'http://automationpractice.com/index.php'</msg>
+<status status="PASS" starttime="20211021 11:54:07.099" endtime="20211021 11:54:14.639"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>My Store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20211021 11:54:14.647" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20211021 11:54:14.639" endtime="20211021 11:54:14.648"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id="block_top_menu"]/ul</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211021 11:54:14.648" endtime="20211021 11:54:14.704"/>
+</kw>
+<status status="PASS" starttime="20211021 11:54:07.098" endtime="20211021 11:54:14.705"/>
+</kw>
+<kw name="Clicar em &quot;Sign in&quot;" library="kws_webautomation">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@class='nav']//*[@class='login']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211021 11:54:14.707" level="INFO">Clicking element 'xpath=//*[@class='nav']//*[@class='login']'.</msg>
+<status status="PASS" starttime="20211021 11:54:14.706" endtime="20211021 11:54:24.045"/>
+</kw>
+<status status="PASS" starttime="20211021 11:54:14.705" endtime="20211021 11:54:24.046"/>
+</kw>
+<kw name="informar um e-mail válido &quot;johnmayercontinuum@uol.com&quot;" library="kws_webautomation" sourcename="informar um e-mail válido &quot;${EMAIL}&quot;">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@class='col-xs-12 col-sm-6']//*[@id='email_create']</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211021 11:54:24.049" level="INFO">Typing text 'johnmayercontinuum@uol.com' into text field '//*[@class='col-xs-12 col-sm-6']//*[@id='email_create']'.</msg>
+<status status="PASS" starttime="20211021 11:54:24.048" endtime="20211021 11:54:24.343"/>
+</kw>
+<status status="PASS" starttime="20211021 11:54:24.047" endtime="20211021 11:54:24.344"/>
+</kw>
+<kw name="Clicar em &quot;Create an account&quot;" library="kws_webautomation">
+<msg timestamp="20211021 11:54:24.345" level="FAIL">User keyword 'Clicar em "Create an account"' contains no keywords.</msg>
+<status status="FAIL" starttime="20211021 11:54:24.344" endtime="20211021 11:54:24.345"/>
+</kw>
+<kw name="Preencher os dados obrigatórios" library="kws_webautomation">
+<status status="NOT RUN" starttime="20211021 11:54:24.345" endtime="20211021 11:54:24.345"/>
+</kw>
+<kw name="Submeter cadastro" library="kws_webautomation">
+<status status="NOT RUN" starttime="20211021 11:54:24.346" endtime="20211021 11:54:24.346"/>
+</kw>
+<kw name="Conferir se o cadastro foi efetuado com sucesso" library="kws_webautomation">
+<status status="NOT RUN" starttime="20211021 11:54:24.346" endtime="20211021 11:54:24.346"/>
+</kw>
+<kw name="Fechar navegador" library="kws_webautomation" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211021 11:54:24.553" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211021 11:54:24.348" endtime="20211021 11:54:24.553"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211021 11:54:24.554" endtime="20211021 11:54:24.726"/>
+</kw>
+<status status="PASS" starttime="20211021 11:54:24.347" endtime="20211021 11:54:24.727"/>
+</kw>
+<tag>ADICIONAR_CLIENTE</tag>
+<status status="FAIL" starttime="20211021 11:54:04.182" endtime="20211021 11:54:24.727">User keyword 'Clicar em "Create an account"' contains no keywords.</status>
+</test>
+<status status="FAIL" starttime="20211021 11:54:03.873" endtime="20211021 11:54:24.730"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">ADICIONAR_CLIENTE</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Webautomation">Webautomation</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
