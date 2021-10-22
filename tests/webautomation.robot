@@ -31,7 +31,7 @@ Caso de teste 04: Adicionar Cliente
     [Tags]      ADICIONAR_CLIENTE
     Acessar a página home do site Automation Practice
     Clicar em "Sign in"
-    informar um e-mail válido "johnmayerContinuum99@uol.com"
+    informar um e-mail válido
     Clicar em "Create an account"
     Preencher os dados obrigatórios
     Submeter cadastro

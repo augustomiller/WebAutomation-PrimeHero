@@ -21,8 +21,11 @@ Acessar a página home do site Automation Practice
     Title Should Be                     My Store
     Wait Until Element Is Visible       xpath=//*[@id="block_top_menu"]/ul
 
+# CN-01
+# Sessão de Keywords - Pesquisar produto existente
 Digitar o nome do produto "${PRODUTO}" no campo de pesquisa
-    Input Text                          id=search_query_top           ${PRODUTO} 
+    ${check_element}=  Run Keyword and Return Status   Wait Until Page Contains Element      id=search_block_top        10s
+    Run Keyword If      '${check_element}' == 'True'     Input Text                          id=search_query_top        ${PRODUTO}
 
 Clicar no botão pesquisar
     Click Element                       name=submit_search
@@ -33,40 +36,41 @@ Conferir se o produto "${PRODUTO}" foi listado no site
 
 # CN-02
 # Sessão de Keywords - Caso de Teste 02: Pesquisar produto não existente
-
 Conferir se a mensagem "No results were found for your search "itemNãoExistente""
-    Wait Until Element Is Visible       xpath=//*[@id='center_column']//*[@class='alert alert-warning']
+    ${check_element}=  Run Keyword and Return Status   Wait Until Page Contains Element     id=center_column    10s
+    Run Keyword If      '${check_element}' == 'True'   Wait Until Element Is Visible        xpath=//*[@id='center_column']//*[@class='alert alert-warning']
 
 # CN-03
 # Sessão de Keywords - Caso de teste 03: Listar Produtos
 Passar o mouse por cima da categoria "Woman" no menu principal superior de categorias
     Mouse Over          xpath=//*[@id='block_top_menu']//*[@href="http://automationpractice.com/index.php?id_category=3&controller=category"]
+
 Clicar na sub categoria "Summer Dresses"
     Click Element       xpath=//*[@id='block_top_menu']//*[@href="http://automationpractice.com/index.php?id_category=11&controller=category"]
-    # Click Element        //*[@id='block_top_menu']//a[@title='Summer Dresses']
+
 Conferir se os produtos da sub-categoria "Summer Dresses" foram mostrados na página
-    Title Should Be     Summer Dresses - My Store
+    ${check_element}=  Run Keyword and Return Status   Wait Until Page Contains Element    id=account-creation_form    10s
+    Run Keyword If      '${check_element}' == 'True'     Title Should Be     Summer Dresses - My Store
 
 # CN-04
 # Sessão de Keywords - Caso de teste 04: Adicionar Cliente
 Clicar em "Sign in"
     Click Element       xpath=//*[@class='nav']//*[@class='login']
 
-informar um e-mail válido "${EMAIL}"
+informar um e-mail válido
     Wait until Element is Visible       id=create-account_form
-    Input Text                          id=email_create     ${EMAIL}
+    Input Text                          id=email_create         johnmayerContinuum2000@uol.com
 
 Clicar em "Create an account"
     Click Button                        id=SubmitCreate
 Preencher os dados obrigatórios
 
-    Wait until Element is Visible       id=account-creation_form
-    Click Element                       id=id_gender1
+    ${check_element}=  Run Keyword and Return Status   Wait Until Page Contains Element    id=account-creation_form    10s
+    Run Keyword If      '${check_element}' == 'True'     Click Element  id=id_gender1
+
     Input Text                          xpath=//*[@id='customer_firstname']     John
     Input Text                          xpath=//*[@id='customer_lastname']      Mayer
     Input Text                          xpath=//*[@id='passwd']                 0o9i8u7y
-    Input Text                          id=firstname        John
-    Input Text                          id=lastname         Mayer
     Input Text                          id=address1         Kailua, Hawaii 96734
     Input Text                          id=city             Canada
     Click Element                       id=id_state
@@ -79,5 +83,10 @@ Submeter cadastro
     Click Button                        id=submitAccount
 
 Conferir se o cadastro foi efetuado com sucesso
+    ${check_element}=  Run Keyword and Return Status     Wait Until Page Contains Element        xpath=//div[@class='header_user_info']  10s
+    Run Keyword If      '${check_element}' == 'True'     Wait Until Element Is Visible           xpath=//div[@class='header_user_info']
+
     ${USER}             Get Text        xpath=//div[@class='header_user_info']//span[contains(text(),'John Mayer')]
-    Should Be Equal     John Mayer      ${USER}
+
+    ${check_element}=  Run Keyword and Return Status     Wait Until Page Contains Element    xpath=//div[@class='header_user_info']    10s
+    Run Keyword If      '${check_element}' == 'True'     Should Be Equal                     John Mayer                                ${USER}
