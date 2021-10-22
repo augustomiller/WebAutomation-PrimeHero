@@ -7,6 +7,8 @@ Objetivo: Utilizando as melhores práticas e tecnologias, foi realizado uma bate
 </div>
   
 <p align="center">
+  <a href="#Cenários-executados">Cenários executados</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#Relatórios">Relatórios</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#Tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#Preparando-o-ambiente">Preparando o ambiente</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#Variáveis-de-Ambiente">Variáveis de Ambiente</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -18,6 +20,24 @@ Objetivo: Utilizando as melhores práticas e tecnologias, foi realizado uma bate
 
 ![homeScreen](https://user-images.githubusercontent.com/990877/138452988-d59ff453-46e6-46a3-94c7-555b6346d380.png)
 ![siteTestado](https://user-images.githubusercontent.com/990877/138453153-9809f34f-b877-4306-a104-e1ad4af348a6.png)
+
+##
+
+<div align="center">
+  
+## Cenários executados
+  
+  ![cenarios](https://user-images.githubusercontent.com/990877/138462162-b501462f-4ba1-4540-8e53-2ec2d8d92f47.png)
+  
+</div>
+
+## Relatórios
+
+![ScreenShot1](https://user-images.githubusercontent.com/990877/138462578-21cee15e-0622-476a-9c19-427910c43671.png)
+![ScreenShot2](https://user-images.githubusercontent.com/990877/138462647-32754ad8-c91d-459f-a83d-a176a7d89a9a.png)
+![ScreenShot3](https://user-images.githubusercontent.com/990877/138462760-5ec0a448-c80d-4d03-8fd5-13fdecad8bc0.png)
+![ScreenShot4](https://user-images.githubusercontent.com/990877/138462833-a2b40f66-3d52-4d96-bfc6-48a1741c8386.png)
+![ScreenShot5](https://user-images.githubusercontent.com/990877/138463272-e2ab25ae-b6db-4e89-a7b7-c8673840b83f.png)
 
 ##
 
