@@ -49,8 +49,12 @@ Este exemplo de site de comércio eletrônico está sendo usado pelo site www.se
 
 ⚠️&nbsp; Entretanto, como essa aplicação não dispões de uma infraestrutura performática, é muito possível que pode estar fora do ar na hora que precise utilizá-lo.
 
+<div align="center">
+
 ![ForadoAr](https://user-images.githubusercontent.com/990877/138487801-5d1bf62d-e8a8-46e2-adb3-2f7d6ebecb09.png)
 
+</div>
+  
 ##
 
 ## Tecnologias
