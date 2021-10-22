@@ -9,6 +9,7 @@ Objetivo: Utilizando as melhores práticas e tecnologias, foi realizado uma bate
 <p align="center">
   <a href="#Cenários-executados">Cenários executados</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#Relatórios">Relatórios</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#Importante">Importante</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#Tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#Preparando-o-ambiente">Preparando o ambiente</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#Variáveis-de-Ambiente">Variáveis de Ambiente</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -38,6 +39,17 @@ Objetivo: Utilizando as melhores práticas e tecnologias, foi realizado uma bate
 ![ScreenShot3](https://user-images.githubusercontent.com/990877/138462760-5ec0a448-c80d-4d03-8fd5-13fdecad8bc0.png)
 ![ScreenShot4](https://user-images.githubusercontent.com/990877/138462833-a2b40f66-3d52-4d96-bfc6-48a1741c8386.png)
 ![ScreenShot5](https://user-images.githubusercontent.com/990877/138463272-e2ab25ae-b6db-4e89-a7b7-c8673840b83f.png)
+
+##
+
+## Importante
+
+Automation Practice Website
+Este exemplo de site de comércio eletrônico está sendo usado pelo site www.seleniumframework.com para ajudar a praticar exercícios em um site de comércio eletrônico em tempo real. Fluxos de trabalho diferentes para adicionar produtos ao carrinho, fazer check-out, fazer pagamentos, etc.
+
+⚠️&nbsp; Entretanto, como essa aplicação não dispões de uma infraestrutura performática, é muito possível que pode estar fora do ar na hora que precise utilizá-lo.
+
+![ForadoAr](https://user-images.githubusercontent.com/990877/138487801-5d1bf62d-e8a8-46e2-adb3-2f7d6ebecb09.png)
 
 ##
 
