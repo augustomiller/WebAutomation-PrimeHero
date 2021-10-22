@@ -1,25 +1,17 @@
 <div align="center">
   
-# Projeto PRIME HERO
-  Testes Web 🗺 
+# Programa Prime Hero Academy
   
-  
-Objetivo 🎯  &nbsp;&nbsp;Utilizando as melhores práticas, Python, Robot Framework, foi realizado uma bateria de testes no site [automationpractice](http://automationpractice.com/index.php), para validar suas funcionalidades.
+Objetivo: Utilizando as melhores práticas e tecnologias, foi realizado uma bateria de testes no site [automationpractice](http://automationpractice.com/index.php), para validar e testar suas funcionalidades.
   
 </div>
   
- <p align="center">
+<p align="center">
   <a href="#Tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#Preparando o ambiente">Preparando o ambiente</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#Variáveis-de-Ambiente">Variáveis de Ambiente</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#Chrome-Driver">Chrome Driver</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#License">License</a>
-</p>
-
-<p align="center">
-  <a href="https://mit-license.org/">
-  <img src="https://img.shields.io/static/v1?label=license&message=MIT&color=5965E0&labelColor=121214" alt="License">
-  </a>
 </p>
 
 <br>
