@@ -47,7 +47,7 @@ Objetivo: Utilizando as melhores práticas e tecnologias, foi realizado uma bate
 Automation Practice Website
 Este exemplo de site de comércio eletrônico está sendo usado pelo site www.seleniumframework.com para ajudar a praticar exercícios em um site de comércio eletrônico em tempo real. Fluxos de trabalho diferentes para adicionar produtos ao carrinho, fazer check-out, fazer pagamentos, etc.
 
-⚠️&nbsp; Entretanto, como essa aplicação não dispões de uma infraestrutura performática, é muito possível que pode estar fora do ar na hora que precise utilizá-lo.
+⚠️&nbsp; Entretanto, como essa aplicação não dispões de uma infraestrutura performática, é muito possível que pode estar fora do ar na hora que precise utilizá-lo para efetuar os testes.
 
 <div align="center">
 
