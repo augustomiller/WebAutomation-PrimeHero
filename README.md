@@ -22,6 +22,7 @@ Objetivo: Utilizando as melhores práticas e tecnologias, foi realizado uma bate
 <br>
 
 ![homeScreen](https://user-images.githubusercontent.com/990877/138452988-d59ff453-46e6-46a3-94c7-555b6346d380.png)
+
 ![siteTestado](https://user-images.githubusercontent.com/990877/138453153-9809f34f-b877-4306-a104-e1ad4af348a6.png)
 
 ##
@@ -107,6 +108,10 @@ Descompacte o arquivo no seguinte diretório:
 C:\Windows
 ~~~
 
+##
+
+![Thats Robot](https://user-images.githubusercontent.com/990877/129357114-76c16f53-b485-4c59-b33a-5975a32e083b.png)
+
 ## License
 
 <div align="center">
@@ -118,5 +123,3 @@ C:\Windows
 <p>Made with&nbsp;💙 &nbsp;by Maic Miller</p>
   
 <div>
-
-![Thats Robot](https://user-images.githubusercontent.com/990877/129357114-76c16f53-b485-4c59-b33a-5975a32e083b.png)
