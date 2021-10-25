@@ -28,7 +28,7 @@ Caso de teste 03: Listar Produtos
     Conferir se os produtos da sub-categoria "Summer Dresses" foram mostrados na página
 
 Caso de teste 04: Adicionar Cliente
-    [Tags]      ADICIONAR_CLIENTE
+    [Tags]      ADD_CLIENT
     Acessar a página home do site Automation Practice
     Clicar em "Sign in"
     informar um e-mail válido

@@ -1,20 +1,4 @@
-Resource        ../package.robot
-
-*** Variables ***
-&{USER}
-...     FIRST_NAME=John
-...     LAST_NAME=Mayer
-...     PASSWORD=0o9i8u7y
-...     COMPANY=Prime Control
-...     ADDRESS_1=100 Congress Ave, Austin, TX 78701
-...     ADDRESS_2=12396 Grant St, Thornton, CO 80241, Estados Unidos
-...     CITY=Estados Unidos
-...     POSTCODE=80241
-...     OTHER=born October 16, 1977, Bridgeport, Connecticut, U.S.
-...     PHONE=+12125650000
-...     PHONE_MOBILE=(808) 266-1222
-...     ID_ALIAS=Nova Iorque, Nova York, EUA
-...     EMAIL=johnmayerContinum2021@fender.com
+Resource        ../package.robotS
 
 *** Keywords ***
 
@@ -61,50 +45,50 @@ Conferir se os produtos da sub-categoria "Summer Dresses" foram mostrados na pá
 # CN-04 - Adicionar Cliente             #
 #---------------------------------------#
 Clicar em "Sign in"
-    Click Element       xpath=//*[@class='nav']//*[@class='login']
+    Click Element       ${USER.SIGN_ELEMENT}
 
 informar um e-mail válido
-    Wait until Element is Visible       id=create-account_form
-    Input Text                          id=email_create         ${USER.EMAIL}
+    Wait until Element is Visible       ${USER.FORM_ACCOUNT}
+    Input Text                          ${USER.ID_INPUT_EMAIL}         ${USER.EMAIL}
 
 Clicar em "Create an account"
-    Click Button                        id=SubmitCreate
+    Click Button                        ${USER.SUBMIT_EMAIL}
 Preencher os dados obrigatórios
 
-    ${check_element}=  Run Keyword and Return Status   Wait Until Page Contains Element    id=account-creation_form    10s
+    ${check_element}=  Run Keyword and Return Status   Wait Until Page Contains Element    ${USER.CHECK_FORM}    10s
     Run Keyword If      '${check_element}' == 'True'     Click Element  id=id_gender1
 
-    Input Text          xpath=//*[@id='customer_firstname']     ${USER.FIRST_NAME}
-    Input Text          xpath=//*[@id='customer_lastname']      ${USER.LAST_NAME}
-    Input Text          xpath=//*[@id='passwd']                 ${USER.PASSWORD}
-    Click Element       id=days
-    Click Element       xpath=//option[contains(text(), '16')]
-    Click Element       id=months
-    Click Element       xpath=//option[contains(text(), 'October')]
-    Click Element       id=years
-    Click Element       xpath=//option[contains(text(), '1977')]
-    Click Element       id=newsletter
-    Click Element       id=optin
-    Input Text          id=company          ${USER.COMPANY}
-    Input Text          id=address1         ${USER.ADDRESS_1}
-    Input Text          id=address2         ${USER.ADDRESS_2}
-    Input Text          id=city             ${USER.CITY}
-    Click Element       id=id_state
-    Click Element       xpath=//option[contains(text(), 'Washington')]
-    Input Text          id=postcode         ${USER.POSTCODE}
-    Input Text          id=other            ${USER.OTHER}
-    Input Text          id=phone            ${USER.PHONE}
-    Input Text          id=phone_mobile     ${USER.PHONE_MOBILE}
-    Input TExt          id=alias            ${USER.ID_ALIAS}
+    Input Text          ${USER.PATH_FIRST_NAME}                 ${USER.FIRST_NAME}
+    Input Text          ${USER.PATH_LAST_NAME}                  ${USER.LAST_NAME}
+    Input Text          ${USER.PATH_PASS}                       ${USER.PASSWORD}
+    Click Element       ${USER.CLICK_DATE}
+    Click Element       ${USER.BIRTH_DAY}
+    Click Element       ${USER.BIRTH_MONTHS_CLICK}
+    Click Element       ${USER.BIRTH_MONTHS}
+    Click Element       ${USER.BIRTH_YEARS_CLICK}
+    Click Element       ${USER.BIRTH_YEARS}
+    Click Element       ${USER.NEWSLETTER}
+    Click Element       ${USER.OFFERS}
+    Input Text          ${USER.COMPANY_ID}          ${USER.COMPANY}
+    Input Text          ${USER.ADDRESS1_ID}         ${USER.ADDRESS_1}
+    Input Text          ${USER.ADDRESS2_ID}         ${USER.ADDRESS_2}
+    Input Text          ${USER.CITY_ID}             ${USER.CITY}
+    Click Element       ${USER.STATE_CLICK}
+    Click Element       ${USER.STATE}
+    Input Text          ${USER.POSTCODE_ID}                 ${USER.POSTCODE}
+    Input Text          ${USER.ADDITIONAL_INFORMATION}      ${USER.OTHER}
+    Input Text          ${USER.PHONE_ID}                    ${USER.PHONE}
+    Input Text          ${USER.PHONE_MOBILE_ID}             ${USER.PHONE_MOBILE}
+    Input TExt          ${USER.ALIAS_ID}                    ${USER.ID_ALIAS}
 
 Submeter cadastro
-    Click Button                        id=submitAccount
+    Click Button                        ${USER.SUBMMIT_ID}
 
 Conferir se o cadastro foi efetuado com sucesso
-    ${check_element}=  Run Keyword and Return Status     Wait Until Page Contains Element        xpath=//div[@class='header_user_info']  10s
-    Run Keyword If      '${check_element}' == 'True'     Wait Until Element Is Visible           xpath=//div[@class='header_user_info']
+    ${check_element}=  Run Keyword and Return Status     Wait Until Page Contains Element        ${USER.HEADER}  10s
+    Run Keyword If      '${check_element}' == 'True'     Wait Until Element Is Visible           ${USER.HEADER}
 
-    ${USER}             Get Text        xpath=//div[@class='header_user_info']//span[contains(text(),'John Mayer')]
+    ${USER}             Get Text        ${USER.DISPLAY}
 
-    ${check_element}=  Run Keyword and Return Status     Wait Until Page Contains Element    xpath=//div[@class='header_user_info']    10s
+    ${check_element}=  Run Keyword and Return Status     Wait Until Page Contains Element    ${USER.HEADER}    10s
     Run Keyword If      '${check_element}' == 'True'     Should Be Equal                     John Mayer                                ${USER}
