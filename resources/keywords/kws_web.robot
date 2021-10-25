@@ -34,15 +34,15 @@ Clicar no botão pesquisar
     Click Element                       ${HOME.SUBMIT_SEARCH_NAME}
 
 Conferir se o produto "${PRODUCT}" foi listado no site
-    Page Should Contain Image           ${HOME.CONTAIN_IMAGE}
-    Title Should Be                     ${HOME.TITLE_NAME}
+    Page Should Contain Image           ${SEARCH.CONTAIN_IMAGE}
+    Title Should Be                     ${SEARCH.TITLE_NAME}
 
 #---------------------------------------#
 # CN-02 - Pesquisar produto inexistente #
 #---------------------------------------#
 Conferir se a mensagem "No results were found for your search "itemNãoExistente""
-    ${check_element}=  Run Keyword and Return Status   Wait Until Page Contains Element     id=center_column    10s
-    Run Keyword If      '${check_element}' == 'True'   Wait Until Element Is Visible        xpath=//*[@id='center_column']//*[@class='alert alert-warning']
+    ${check_element}=  Run Keyword and Return Status   Wait Until Page Contains Element     ${SEARCH.ID_COLUMN}    10s
+    Run Keyword If      '${check_element}' == 'True'   Wait Until Element Is Visible        ${SEARCH.ALERT_WARNING}
 
 #---------------------------------------#
 # CN-03 - Listar Produtos               #

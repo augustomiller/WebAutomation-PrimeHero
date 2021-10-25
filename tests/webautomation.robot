@@ -14,7 +14,7 @@ Caso de Teste 01: Pesquisar produto existente
     Conferir se o produto "Blouse" foi listado no site
 
 Caso de Teste 02: Pesquisar produto não existente
-    [Tags]      PRODUTO_INEXISTENTE
+    [Tags]      NONEXISTENT_PRODUCT
     Acessar a página home do site Automation Practice
     Digitar o nome do produto "itemNãoExistente" no campo de pesquisa
     Clicar no botão pesquisar

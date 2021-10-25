@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1 (Python 3.9.6 on darwin)" generated="20211025 09:45:59.532" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1 (Python 3.9.6 on darwin)" generated="20211025 10:02:53.761" rpa="false" schemaversion="2">
 <suite id="s1" name="Webautomation" source="/Users/maicmiller/Documents/GitHub/WebAutomation-PrimeHero/tests/webautomation.robot">
-<test id="s1-t1" name="Caso de Teste 01: Pesquisar produto existente">
+<test id="s1-t1" name="Caso de Teste 02: Pesquisar produto não existente">
 <kw name="Abrir navegador" library="hooks" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20211025 09:45:59.867" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/'.</msg>
-<status status="PASS" starttime="20211025 09:45:59.867" endtime="20211025 09:46:06.234"/>
+<msg timestamp="20211025 10:02:54.156" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/'.</msg>
+<status status="PASS" starttime="20211025 10:02:54.155" endtime="20211025 10:03:02.095"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20211025 09:46:06.236" endtime="20211025 09:46:06.514"/>
+<status status="PASS" starttime="20211025 10:03:02.096" endtime="20211025 10:03:02.322"/>
 </kw>
-<status status="PASS" starttime="20211025 09:45:59.866" endtime="20211025 09:46:06.515"/>
+<status status="PASS" starttime="20211025 10:02:54.154" endtime="20211025 10:03:02.322"/>
 </kw>
 <kw name="Acessar a página home do site Automation Practice" library="kws_web">
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20211025 09:46:06.518" level="INFO">Opening url 'http://automationpractice.com/'</msg>
-<status status="PASS" starttime="20211025 09:46:06.517" endtime="20211025 09:46:08.167"/>
+<msg timestamp="20211025 10:03:02.324" level="INFO">Opening url 'http://automationpractice.com/'</msg>
+<status status="PASS" starttime="20211025 10:03:02.324" endtime="20211025 10:03:05.935"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>${HOME.TITLE_PAGE_HOME}</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20211025 09:46:08.182" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20211025 09:46:08.168" endtime="20211025 09:46:08.182"/>
+<msg timestamp="20211025 10:03:05.950" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20211025 10:03:05.935" endtime="20211025 10:03:05.950"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${HOME.CATEGORY_MENU_OPTIONS}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20211025 09:46:08.182" endtime="20211025 09:46:08.256"/>
+<status status="PASS" starttime="20211025 10:03:05.950" endtime="20211025 10:03:06.011"/>
 </kw>
-<status status="PASS" starttime="20211025 09:46:06.516" endtime="20211025 09:46:08.257"/>
+<status status="PASS" starttime="20211025 10:03:02.323" endtime="20211025 10:03:06.011"/>
 </kw>
-<kw name="Digitar o nome do produto &quot;Blouse&quot; no campo de pesquisa" library="kws_web" sourcename="Digitar o nome do produto &quot;${PRODUCT}&quot; no campo de pesquisa">
+<kw name="Digitar o nome do produto &quot;itemNãoExistente&quot; no campo de pesquisa" library="kws_web" sourcename="Digitar o nome do produto &quot;${PRODUCT}&quot; no campo de pesquisa">
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <var>${check_element}</var>
 <arg>Wait Until Page Contains Element</arg>
@@ -47,10 +47,10 @@
 <arg>${HOME.SEARCH_INPUT_ID}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20211025 09:46:08.259" endtime="20211025 09:46:08.296"/>
+<status status="PASS" starttime="20211025 10:03:06.014" endtime="20211025 10:03:06.060"/>
 </kw>
-<msg timestamp="20211025 09:46:08.297" level="INFO">${check_element} = True</msg>
-<status status="PASS" starttime="20211025 09:46:08.259" endtime="20211025 09:46:08.297"/>
+<msg timestamp="20211025 10:03:06.060" level="INFO">${check_element} = True</msg>
+<status status="PASS" starttime="20211025 10:03:06.013" endtime="20211025 10:03:06.060"/>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <arg>'${check_element}' == 'True'</arg>
@@ -62,61 +62,76 @@
 <arg>${HOME.SEARCH_INPUT_ID}</arg>
 <arg>${PRODUCT}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20211025 09:46:08.303" level="INFO">Typing text 'Blouse' into text field 'id=search_query_top'.</msg>
-<status status="PASS" starttime="20211025 09:46:08.299" endtime="20211025 09:46:08.557"/>
+<msg timestamp="20211025 10:03:06.072" level="INFO">Typing text 'itemNãoExistente' into text field 'id=search_query_top'.</msg>
+<status status="PASS" starttime="20211025 10:03:06.063" endtime="20211025 10:03:06.348"/>
 </kw>
-<status status="PASS" starttime="20211025 09:46:08.298" endtime="20211025 09:46:08.557"/>
+<status status="PASS" starttime="20211025 10:03:06.061" endtime="20211025 10:03:06.348"/>
 </kw>
-<status status="PASS" starttime="20211025 09:46:08.257" endtime="20211025 09:46:08.558"/>
+<status status="PASS" starttime="20211025 10:03:06.012" endtime="20211025 10:03:06.349"/>
 </kw>
 <kw name="Clicar no botão pesquisar" library="kws_web">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${HOME.SUBMIT_SEARCH_NAME}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20211025 09:46:08.560" level="INFO">Clicking element 'name=submit_search'.</msg>
-<status status="PASS" starttime="20211025 09:46:08.559" endtime="20211025 09:46:09.741"/>
+<msg timestamp="20211025 10:03:06.354" level="INFO">Clicking element 'name=submit_search'.</msg>
+<status status="PASS" starttime="20211025 10:03:06.350" endtime="20211025 10:03:08.385"/>
 </kw>
-<status status="PASS" starttime="20211025 09:46:08.558" endtime="20211025 09:46:09.742"/>
+<status status="PASS" starttime="20211025 10:03:06.349" endtime="20211025 10:03:08.385"/>
 </kw>
-<kw name="Conferir se o produto &quot;Blouse&quot; foi listado no site" library="kws_web" sourcename="Conferir se o produto &quot;${PRODUCT}&quot; foi listado no site">
-<kw name="Page Should Contain Image" library="SeleniumLibrary">
-<arg>${HOME.CONTAIN_IMAGE}</arg>
-<doc>Verifies image identified by ``locator`` is found from current page.</doc>
-<msg timestamp="20211025 09:46:09.774" level="INFO">Current page contains image '//*[@id="center_column"]//*[@src='http://automationpractice.com/img/p/7/7-home_default.jpg']'.</msg>
-<status status="PASS" starttime="20211025 09:46:09.745" endtime="20211025 09:46:09.774"/>
+<kw name="Conferir se a mensagem &quot;No results were found for your search &quot;itemNãoExistente&quot;&quot;" library="kws_web">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${check_element}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${SEARCH.ID_COLUMN}</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${SEARCH.ID_COLUMN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211025 10:03:08.387" endtime="20211025 10:03:08.412"/>
 </kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>${HOME.TITLE_NAME}</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20211025 09:46:09.782" level="INFO">Page title is 'Search - My Store'.</msg>
-<status status="PASS" starttime="20211025 09:46:09.775" endtime="20211025 09:46:09.782"/>
+<msg timestamp="20211025 10:03:08.412" level="INFO">${check_element} = True</msg>
+<status status="PASS" starttime="20211025 10:03:08.387" endtime="20211025 10:03:08.412"/>
 </kw>
-<status status="PASS" starttime="20211025 09:46:09.743" endtime="20211025 09:46:09.782"/>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${check_element}' == 'True'</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${SEARCH.ALERT_WARNING}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SEARCH.ALERT_WARNING}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211025 10:03:08.414" endtime="20211025 10:03:08.465"/>
+</kw>
+<status status="PASS" starttime="20211025 10:03:08.413" endtime="20211025 10:03:08.466"/>
+</kw>
+<status status="PASS" starttime="20211025 10:03:08.386" endtime="20211025 10:03:08.466"/>
 </kw>
 <kw name="Fechar navegador" library="hooks" type="TEARDOWN">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20211025 09:46:10.034" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20211025 09:46:09.784" endtime="20211025 09:46:10.034"/>
+<msg timestamp="20211025 10:03:08.726" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211025 10:03:08.469" endtime="20211025 10:03:08.726"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20211025 09:46:10.035" endtime="20211025 09:46:10.192"/>
+<status status="PASS" starttime="20211025 10:03:08.726" endtime="20211025 10:03:08.887"/>
 </kw>
-<status status="PASS" starttime="20211025 09:46:09.783" endtime="20211025 09:46:10.193"/>
+<status status="PASS" starttime="20211025 10:03:08.468" endtime="20211025 10:03:08.887"/>
 </kw>
-<tag>EXISTING_PRODUCT</tag>
-<status status="PASS" starttime="20211025 09:45:59.864" endtime="20211025 09:46:10.193"/>
+<tag>NONEXISTENT_PRODUCT</tag>
+<status status="PASS" starttime="20211025 10:02:54.152" endtime="20211025 10:03:08.887"/>
 </test>
 <doc>Aqui consta todos os cenários de testes web.</doc>
-<status status="PASS" starttime="20211025 09:45:59.539" endtime="20211025 09:46:10.196"/>
+<status status="PASS" starttime="20211025 10:02:53.765" endtime="20211025 10:03:08.891"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">EXISTING_PRODUCT</stat>
+<stat pass="1" fail="0" skip="0">NONEXISTENT_PRODUCT</stat>
 </tag>
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="Webautomation">Webautomation</stat>

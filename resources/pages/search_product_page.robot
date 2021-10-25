@@ -5,10 +5,8 @@ Documentation       Aqui consta todos as elementos e variáveis
 #       SEARCH PRODUCT        #
 #-----------------------------#
 *** Variables ***
-&{SEARCH}     
-...         INPUT_BUSCA=search_query_top
-...         BTN_PESQUISAR=submit_search
-...         IMG_BLOUSE=//*[@id="center_column"]//*[@src="http://automationpractice.com/img/p/7/7-home_default.jpg"]
-...         TITLE_PAGE_SEARCH=Search - My Store
-...         ID_COLUNA=center_column
-...         ALERT=//*[@id="center_column"]/p[@class="alert alert-warning"]
+&{SEARCH}
+...     CONTAIN_IMAGE=//*[@id="center_column"]//*[@src='http://automationpractice.com/img/p/7/7-home_default.jpg']
+...     TITLE_NAME=Search - My Store  
+...     ID_COLUMN=id=center_column
+...     ALERT_WARNING=//*[@id='center_column']//*[@class='alert alert-warning']
