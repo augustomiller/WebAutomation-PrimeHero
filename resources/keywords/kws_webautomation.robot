@@ -59,7 +59,7 @@ Clicar em "Sign in"
 
 informar um e-mail válido
     Wait until Element is Visible       id=create-account_form
-    Input Text                          id=email_create         johnmayerContinuum2009@fender.com
+    Input Text                          id=email_create         johnmayerContinum2021@fender.com
 
 Clicar em "Create an account"
     Click Button                        id=SubmitCreate
