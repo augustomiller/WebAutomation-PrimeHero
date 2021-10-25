@@ -2,9 +2,9 @@ Resource        ../package.robotS
 
 *** Keywords ***
 
-#-------------------------------------#
-# CN-01 - Pesquisar produto existente #
-#-------------------------------------#
+#------------------------------------------------------------------------------#
+#                           CN-01 - Pesquisar produto existente                #
+#------------------------------------------------------------------------------#
 Acessar a página home do site Automation Practice
     Go To                               ${URL}
     Title Should Be                     ${HOME.TITLE_PAGE_HOME}
@@ -21,16 +21,16 @@ Conferir se o produto "${PRODUCT}" foi listado no site
     Page Should Contain Image           ${SEARCH.CONTAIN_IMAGE}
     Title Should Be                     ${SEARCH.TITLE_NAME}
 
-#---------------------------------------#
-# CN-02 - Pesquisar produto inexistente #
-#---------------------------------------#
+#------------------------------------------------------------------------------#
+#                           CN-02 - Pesquisar produto inexistente              #
+#------------------------------------------------------------------------------#
 Conferir se a mensagem "No results were found for your search "itemNãoExistente""
     ${check_element}=  Run Keyword and Return Status   Wait Until Page Contains Element     ${SEARCH.ID_COLUMN}    10s
     Run Keyword If      '${check_element}' == 'True'   Wait Until Element Is Visible        ${SEARCH.ALERT_WARNING}
 
-#---------------------------------------#
-# CN-03 - Listar Produtos               #
-#---------------------------------------#
+#------------------------------------------------------------------------------#
+#                           CN-03 - Listar Produtos por categoria              #
+#------------------------------------------------------------------------------#
 Passar o mouse por cima da categoria "Woman" no menu principal superior de categorias
     Mouse Over          ${HOME.WOMAN_CATEGORY}
 
@@ -41,9 +41,9 @@ Conferir se os produtos da sub-categoria "Summer Dresses" foram mostrados na pá
     ${check_element}=  Run Keyword and Return Status     Wait Until Page Contains Element    ${SUMMER_CATEGORY.ID_FORM}    10s
     Run Keyword If      '${check_element}' == 'True'     Title Should Be     ${SUMMER_CATEGORY.TITLE}
 
-#---------------------------------------#
-# CN-04 - Adicionar Cliente             #
-#---------------------------------------#
+#------------------------------------------------------------------------------#
+#                           CN-04 - Adicionar Cliente                          #
+#------------------------------------------------------------------------------#
 Clicar em "Sign in"
     Click Element       ${USER.SIGN_ELEMENT}
 
@@ -91,4 +91,24 @@ Conferir se o cadastro foi efetuado com sucesso
     ${USER}             Get Text        ${USER.DISPLAY}
 
     ${check_element}=  Run Keyword and Return Status     Wait Until Page Contains Element    ${USER.HEADER}    10s
-    Run Keyword If      '${check_element}' == 'True'     Should Be Equal                     John Mayer                                ${USER}
+    Run Keyword If      '${check_element}' == 'True'     Should Be Equal                     John Mayer     ${USER}
+
+#------------------------------------------------------------------------------#
+#                           CN-05 - Autenticar no site                         #
+#------------------------------------------------------------------------------#
+Informar o e-mail cadastrado
+    Click Element       ${USER_AUTH.EMAIL_ADDRESS}
+    Input Text          ${USER_AUTH.EMAIL_INPUT}    ${USER_AUTH.EMAIL_REGISTERED}
+Informar a senha cadastrada
+    Click Element       ${USER_AUTH.PASS_CLICK}
+    Input Text          ${USER_AUTH.PASS_INPUT}     ${USER_AUTH.PASS_STRG}
+Submeter autenticação
+    Click Element       ${USER_AUTH.SIGN_IN}
+Conferir se a autenticação foi realizada com sucesso
+    ${check_element}=  Run Keyword and Return Status     Wait Until Page Contains Element        ${USER_AUTH.HEADER}  10s
+    Run Keyword If      '${check_element}' == 'True'     Wait Until Element Is Visible           ${USER_AUTH.HEADER}
+
+    ${USER_TMP}             Get Text        ${USER_AUTH.DISPLAY}
+
+    ${check_element}=  Run Keyword and Return Status     Wait Until Page Contains Element    ${USER_AUTH.HEADER}    10s
+    Run Keyword If      '${check_element}' == 'True'     Should Be Equal                     John Mayer     ${USER_TMP} 
