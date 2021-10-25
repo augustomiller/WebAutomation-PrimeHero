@@ -1,20 +1,7 @@
 *** Settings ***
 Documentation        Aqui estarão presentes todas as keywords dos testes Web.
 
-Library             SeleniumLibrary
-
-*** Variables ***
-${BROWSER}        chrome
-${URL}            http://automationpractice.com/index.php
-
-*** Keywords ***
-Abrir navegador
-    Open Browser           browser=${BROWSER}
-    Maximize Browser Window
-
-Fechar navegador
-    Capture Page Screenshot
-    Close Browser
+Resource        ../package.robot
 
 Acessar a página home do site Automation Practice
     Go To                               ${URL}

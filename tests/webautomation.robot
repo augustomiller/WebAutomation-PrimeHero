@@ -1,13 +1,13 @@
 *** Settings ***
-Documentation       
+Documentation       Aqui consta todos os cenários de testes web.
 
-Resource            ../resources/keywords/kws_webautomation.robot
 Test Setup          Abrir navegador
 Test Teardown       Fechar navegador
+Resource            ../resources/package.robot
 
 *** Test Cases ***
 Caso de Teste 01: Pesquisar produto existente
-    [Tags]      PRODUTO_EXISTENTE
+    [Tags]      EXISTING_PRODUCT
     Acessar a página home do site Automation Practice
     Digitar o nome do produto "Blouse" no campo de pesquisa
     Clicar no botão pesquisar
