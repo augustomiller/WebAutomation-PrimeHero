@@ -48,14 +48,14 @@ Conferir se a mensagem "No results were found for your search "itemNãoExistente
 # CN-03 - Listar Produtos               #
 #---------------------------------------#
 Passar o mouse por cima da categoria "Woman" no menu principal superior de categorias
-    Mouse Over          xpath=//*[@id='block_top_menu']//*[@href="http://automationpractice.com/index.php?id_category=3&controller=category"]
+    Mouse Over          ${HOME.WOMAN_CATEGORY}
 
 Clicar na sub categoria "Summer Dresses"
-    Click Element       xpath=//*[@id='block_top_menu']//*[@href="http://automationpractice.com/index.php?id_category=11&controller=category"]
+    Click Element       ${HOME.SUMMER_DRESSES_CATEGORY}
 
 Conferir se os produtos da sub-categoria "Summer Dresses" foram mostrados na página
-    ${check_element}=  Run Keyword and Return Status     Wait Until Page Contains Element    id=account-creation_form    10s
-    Run Keyword If      '${check_element}' == 'True'     Title Should Be     Summer Dresses - My Store
+    ${check_element}=  Run Keyword and Return Status     Wait Until Page Contains Element    ${SUMMER_CATEGORY.ID_FORM}    10s
+    Run Keyword If      '${check_element}' == 'True'     Title Should Be     ${SUMMER_CATEGORY.TITLE}
 
 #---------------------------------------#
 # CN-04 - Adicionar Cliente             #

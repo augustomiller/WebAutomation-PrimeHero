@@ -21,7 +21,7 @@ Caso de Teste 02: Pesquisar produto não existente
     Conferir se a mensagem "No results were found for your search "itemNãoExistente""
 
 Caso de teste 03: Listar Produtos
-    [Tags]      LISTAR_PRODUTOS
+    [Tags]      LIST_PRODUCTS
     Acessar a página home do site Automation Practice
     Passar o mouse por cima da categoria "Woman" no menu principal superior de categorias
     Clicar na sub categoria "Summer Dresses"
