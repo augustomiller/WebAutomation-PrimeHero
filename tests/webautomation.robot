@@ -45,3 +45,22 @@ Caso de teste 05: Autenticar no site
     Informar a senha cadastrada
     Submeter autenticação
     Conferir se a autenticação foi realizada com sucesso
+
+Caso de teste06: Comprar um produto
+    [tags]      BUY_A_PRODUCT
+    Acessar a página home do site Automation Practice
+    Clicar em "Sign in"
+    Informar o e-mail cadastrado
+    Informar a senha cadastrada
+    Submeter autenticação
+    Conferir se a autenticação foi realizada com sucesso
+    #
+    Acessar a página home do site Automation Practice
+    Passar o mouse por cima da categoria "Woman" no menu principal superior de categorias
+    Clicar na sub categoria "Summer Dresses"
+    Conferir se os produtos da sub-categoria "Summer Dresses" foram mostrados na página
+    #
+    Adicionar o produto no carrinho
+    Escolher metodo de pagamento
+    Confirmar a ordem de pagamento
+    Visualizar a ordem na lista de ordens

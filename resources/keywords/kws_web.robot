@@ -7,8 +7,11 @@ Resource        ../package.robotS
 #------------------------------------------------------------------------------#
 Acessar a página home do site Automation Practice
     Go To                               ${URL}
-    Title Should Be                     ${HOME.TITLE_PAGE_HOME}
-    Wait Until Element Is Visible       ${HOME.CATEGORY_MENU_OPTIONS}
+    
+    ${check_element}=  Run Keyword and Return Status     Wait Until Page Contains Element        ${HOME.TITLE_PAGE_HOME}  10s
+    Run Keyword If      '${check_element}' == 'True'     Wait Until Element Is Visible           ${HOME.CATEGORY_MENU_OPTIONS}
+
+    Title Should Be                     ${HOME.TITLE_PAGE_HOME}      
 
 Digitar o nome do produto "${PRODUCT}" no campo de pesquisa
     ${check_element}=  Run Keyword and Return Status     Wait Until Page Contains Element      ${HOME.SEARCH_INPUT_ID}        10s
@@ -93,6 +96,8 @@ Conferir se o cadastro foi efetuado com sucesso
     ${check_element}=  Run Keyword and Return Status     Wait Until Page Contains Element    ${USER.HEADER}    10s
     Run Keyword If      '${check_element}' == 'True'     Should Be Equal                     John Mayer     ${USER}
 
+    Click Element       ${USER_AUTH.BACK_TO_HOME}
+
 #------------------------------------------------------------------------------#
 #                           CN-05 - Autenticar no site                         #
 #------------------------------------------------------------------------------#
@@ -111,4 +116,41 @@ Conferir se a autenticação foi realizada com sucesso
     ${USER_TMP}             Get Text        ${USER_AUTH.DISPLAY}
 
     ${check_element}=  Run Keyword and Return Status     Wait Until Page Contains Element    ${USER_AUTH.HEADER}    10s
-    Run Keyword If      '${check_element}' == 'True'     Should Be Equal                     John Mayer     ${USER_TMP} 
+    Run Keyword If      '${check_element}' == 'True'     Should Be Equal                   John Mayer     ${USER_TMP} 
+
+    Click Element       ${USER_AUTH.BACK_TO_HOME}
+
+#------------------------------------------------------------------------------#
+#                           CN-06 - Comprar um produto                         #
+#------------------------------------------------------------------------------#
+Adicionar o produto no carrinho
+
+    Click Element      ${SUMMER.FRAME_PRODUTO}
+    Click Element      ${SUMMER.ADD_TO_CART}
+    ${check_element}=  Run Keyword and Return Status     Wait Until Page Contains Element       ${SUMMER.PROCEED_TO_SUMMARY}  10s
+    Run Keyword If     '${check_element}' == 'True'     Wait Until Element Is Visible           ${SUMMER.PROCEED_TO_SUMMARY}
+    Click Element      ${SUMMER.PROCEED_TO_SUMMARY}     
+    Click Element      ${SUMMER.PROCEED_TO_ADDRESS}
+
+    ${check_element}=  Run Keyword and Return Status     Wait Until Page Contains Element       ${SUMMER.PROCEED_TO_SHIPPING}  10s
+    Run Keyword If     '${check_element}' == 'True'     Wait Until Element Is Visible           ${SUMMER.PROCEED_TO_SHIPPING}       
+    Click Element      ${SUMMER.PROCEED_TO_SHIPPING}
+    
+    ${check_element}=  Run Keyword and Return Status     Wait Until Page Contains Element       ${SUMMER.TERMS_OS_SERVICE}  10s
+    Run Keyword If     '${check_element}' == 'True'      Wait Until Element Is Visible           ${SUMMER.TERMS_OS_SERVICE}       
+    Click Element      ${SUMMER.TERMS_OS_SERVICE}
+
+Escolher metodo de pagamento
+    Click Element      ${SUMMER.PROCEED_TO_PAYMENT}
+    Click Element      ${SUMMER.PAY_BY_BANK}
+    Click Element      ${SUMMER.CONFIRM_ORDER}
+Confirmar a ordem de pagamento
+    ${check_element}=  Run Keyword and Return Status     Wait Until Page Contains Element    ${SUMMER.ORDER_COMPLETE}    10s
+    Run Keyword If      '${check_element}' == 'True'     Wait Until Element Is Visible       ${SUMMER.ORDER_COMPLETE}
+
+    ${ORDER_COMPLETE}       Get Text        ${SUMMER.ORDER_COMPLETE}
+
+    Should Be Equal     Your order on My Store is complete.     ${ORDER_COMPLETE}
+
+Visualizar a ordem na lista de ordens
+    Click Element       ${SUMMER.GO_TO_ORDERS}

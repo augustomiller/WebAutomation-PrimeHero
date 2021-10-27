@@ -7,12 +7,17 @@ Resource        package.robot
 ${BROWSER}  chrome
 ${URL}      http://automationpractice.com/
 
-*** Keywords ***
-#SETUP E TEARDOWN
+*** Keywords *** 
+#------------------------------------------------------------------------------#
+#                                SETUP                                         #
+#------------------------------------------------------------------------------#
 Abrir navegador
     Open BROWSER        ${URL}      ${BROWSER}
     Maximize BROWSER Window
 
+#------------------------------------------------------------------------------#
+#                               TEARDOWN                                       #
+#------------------------------------------------------------------------------#
 Fechar navegador
     Capture Page Screenshot
     Close BROWSER

@@ -15,3 +15,4 @@ Documentation       Aqui consta todos as elementos e variáveis
 ...     SIGN_IN=SubmitLogin
 ...     HEADER=xpath=//div[@class='header_user_info']
 ...     DISPLAY=xpath=//div[@class='header_user_info']//span[contains(text(),'John Mayer')]
+...     BACK_TO_HOME=//*[@class='icon-chevron-left']
