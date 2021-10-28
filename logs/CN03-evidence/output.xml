@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.9.6 on darwin)" generated="20211028 10:30:26.623" rpa="false" schemaversion="2">
+<suite id="s1" name="Webautomation" source="/Users/maicmiller/Documents/GitHub/WebAutomation-PrimeHero/tests/webautomation.robot">
+<test id="s1-t1" name="Caso de teste 03: Listar Produtos por categoria">
+<kw name="Abrir navegador" library="hooks" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211028 10:30:26.997" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/'.</msg>
+<status status="PASS" starttime="20211028 10:30:26.997" endtime="20211028 10:30:47.167"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211028 10:30:47.168" endtime="20211028 10:30:47.340"/>
+</kw>
+<status status="PASS" starttime="20211028 10:30:26.996" endtime="20211028 10:30:47.341"/>
+</kw>
+<kw name="Acessar a página home do site Automation Practice" library="kws_web">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211028 10:30:47.345" level="INFO">Opening url 'http://automationpractice.com/'</msg>
+<status status="PASS" starttime="20211028 10:30:47.344" endtime="20211028 10:31:03.261"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${check_element}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${HOME.TITLE_PAGE_HOME}</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${HOME.TITLE_PAGE_HOME}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211028 10:31:13.859" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211028 10:31:13.467" endtime="20211028 10:31:13.859"/>
+</kw>
+<msg timestamp="20211028 10:31:13.867" level="FAIL">Element 'My Store' did not appear in 10 seconds.</msg>
+<status status="FAIL" starttime="20211028 10:31:03.264" endtime="20211028 10:31:13.867"/>
+</kw>
+<msg timestamp="20211028 10:31:13.868" level="INFO">${check_element} = False</msg>
+<status status="PASS" starttime="20211028 10:31:03.262" endtime="20211028 10:31:13.868"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${check_element}' == 'True'</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${HOME.CATEGORY_MENU_OPTIONS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211028 10:31:13.868" endtime="20211028 10:31:13.869"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${HOME.TITLE_PAGE_HOME}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20211028 10:31:13.876" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20211028 10:31:13.869" endtime="20211028 10:31:13.876"/>
+</kw>
+<status status="PASS" starttime="20211028 10:30:47.342" endtime="20211028 10:31:13.877"/>
+</kw>
+<kw name="Passar o mouse por cima da categoria &quot;Woman&quot; no menu principal superior de categorias" library="kws_web">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${HOME.WOMAN_CATEGORY}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20211028 10:31:13.879" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id='block_top_menu']//*[@href="http://automationpractice.com/index.php?id_category=3&amp;controller=category"]'.</msg>
+<status status="PASS" starttime="20211028 10:31:13.878" endtime="20211028 10:31:14.168"/>
+</kw>
+<status status="PASS" starttime="20211028 10:31:13.877" endtime="20211028 10:31:14.169"/>
+</kw>
+<kw name="Clicar na sub categoria &quot;Summer Dresses&quot;" library="kws_web">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOME.SUMMER_DRESSES_CATEGORY}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211028 10:31:14.173" level="INFO">Clicking element 'xpath=//*[@id='block_top_menu']//*[@href="http://automationpractice.com/index.php?id_category=11&amp;controller=category"]'.</msg>
+<status status="PASS" starttime="20211028 10:31:14.171" endtime="20211028 10:31:27.824"/>
+</kw>
+<status status="PASS" starttime="20211028 10:31:14.169" endtime="20211028 10:31:27.824"/>
+</kw>
+<kw name="Conferir se os produtos da sub-categoria &quot;Summer Dresses&quot; foram mostrados na página" library="kws_web">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${check_element}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${SUMMER_CATEGORY.ID_FORM}</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${SUMMER_CATEGORY.ID_FORM}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211028 10:31:38.230" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211028 10:31:37.967" endtime="20211028 10:31:38.230"/>
+</kw>
+<msg timestamp="20211028 10:31:38.232" level="FAIL">Element 'account-creation_form' did not appear in 10 seconds.</msg>
+<status status="FAIL" starttime="20211028 10:31:27.826" endtime="20211028 10:31:38.232"/>
+</kw>
+<msg timestamp="20211028 10:31:38.232" level="INFO">${check_element} = False</msg>
+<status status="PASS" starttime="20211028 10:31:27.826" endtime="20211028 10:31:38.232"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${check_element}' == 'True'</arg>
+<arg>Title Should Be</arg>
+<arg>${SUMMER_CATEGORY.TITLE}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211028 10:31:38.232" endtime="20211028 10:31:38.233"/>
+</kw>
+<status status="PASS" starttime="20211028 10:31:27.825" endtime="20211028 10:31:38.233"/>
+</kw>
+<kw name="Fechar navegador" library="hooks" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211028 10:31:38.495" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211028 10:31:38.235" endtime="20211028 10:31:38.495"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211028 10:31:38.495" endtime="20211028 10:31:38.666"/>
+</kw>
+<status status="PASS" starttime="20211028 10:31:38.234" endtime="20211028 10:31:38.666"/>
+</kw>
+<tag>LIST_PRODUCTS</tag>
+<status status="PASS" starttime="20211028 10:30:26.994" endtime="20211028 10:31:38.666"/>
+</test>
+<doc>Aqui consta todos os cenários de testes web.</doc>
+<status status="PASS" starttime="20211028 10:30:26.626" endtime="20211028 10:31:38.670"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">LIST_PRODUCTS</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Webautomation">Webautomation</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.9.6 on darwin)" generated="20211028 10:37:11.897" rpa="false" schemaversion="2">
+<suite id="s1" name="Webautomation" source="/Users/maicmiller/Documents/GitHub/WebAutomation-PrimeHero/tests/webautomation.robot">
+<test id="s1-t1" name="Caso de teste 05: Autenticar no site">
+<kw name="Abrir navegador" library="hooks" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211028 10:37:12.212" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/'.</msg>
+<status status="PASS" starttime="20211028 10:37:12.211" endtime="20211028 10:37:31.142"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211028 10:37:31.143" endtime="20211028 10:37:31.382"/>
+</kw>
+<status status="PASS" starttime="20211028 10:37:12.210" endtime="20211028 10:37:31.382"/>
+</kw>
+<kw name="Acessar a página home do site Automation Practice" library="kws_web">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211028 10:37:31.386" level="INFO">Opening url 'http://automationpractice.com/'</msg>
+<status status="PASS" starttime="20211028 10:37:31.385" endtime="20211028 10:37:40.669"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${check_element}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${HOME.TITLE_PAGE_HOME}</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${HOME.TITLE_PAGE_HOME}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211028 10:37:51.281" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211028 10:37:50.883" endtime="20211028 10:37:51.281"/>
+</kw>
+<msg timestamp="20211028 10:37:51.290" level="FAIL">Element 'My Store' did not appear in 10 seconds.</msg>
+<status status="FAIL" starttime="20211028 10:37:40.671" endtime="20211028 10:37:51.290"/>
+</kw>
+<msg timestamp="20211028 10:37:51.290" level="INFO">${check_element} = False</msg>
+<status status="PASS" starttime="20211028 10:37:40.670" endtime="20211028 10:37:51.290"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${check_element}' == 'True'</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${HOME.CATEGORY_MENU_OPTIONS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211028 10:37:51.290" endtime="20211028 10:37:51.291"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${HOME.TITLE_PAGE_HOME}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20211028 10:37:51.298" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20211028 10:37:51.291" endtime="20211028 10:37:51.298"/>
+</kw>
+<status status="PASS" starttime="20211028 10:37:31.383" endtime="20211028 10:37:51.298"/>
+</kw>
+<kw name="Clicar em &quot;Sign in&quot;" library="kws_web">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${USER.SIGN_ELEMENT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211028 10:37:51.301" level="INFO">Clicking element 'xpath=//*[@class='nav']//*[@class='login']'.</msg>
+<status status="PASS" starttime="20211028 10:37:51.299" endtime="20211028 10:38:04.231"/>
+</kw>
+<status status="PASS" starttime="20211028 10:37:51.299" endtime="20211028 10:38:04.232"/>
+</kw>
+<kw name="Informar o e-mail cadastrado" library="kws_web">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${USER_AUTH.EMAIL_ADDRESS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211028 10:38:04.237" level="INFO">Clicking element 'id=email'.</msg>
+<status status="PASS" starttime="20211028 10:38:04.234" endtime="20211028 10:38:04.381"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USER_AUTH.EMAIL_INPUT}</arg>
+<arg>${USER_AUTH.EMAIL_REGISTERED}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211028 10:38:04.387" level="INFO">Typing text 'johnmayerContinum2014@fender.com' into text field 'id=email'.</msg>
+<status status="PASS" starttime="20211028 10:38:04.382" endtime="20211028 10:38:04.635"/>
+</kw>
+<status status="PASS" starttime="20211028 10:38:04.233" endtime="20211028 10:38:04.636"/>
+</kw>
+<kw name="Informar a senha cadastrada" library="kws_web">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${USER_AUTH.PASS_CLICK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211028 10:38:04.641" level="INFO">Clicking element 'id=passwd'.</msg>
+<status status="PASS" starttime="20211028 10:38:04.638" endtime="20211028 10:38:04.752"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USER_AUTH.PASS_INPUT}</arg>
+<arg>${USER_AUTH.PASS_STRG}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211028 10:38:04.754" level="INFO">Typing text '0o9i8u7y' into text field 'id=passwd'.</msg>
+<status status="PASS" starttime="20211028 10:38:04.753" endtime="20211028 10:38:04.853"/>
+</kw>
+<status status="PASS" starttime="20211028 10:38:04.636" endtime="20211028 10:38:04.853"/>
+</kw>
+<kw name="Submeter autenticação" library="kws_web">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${USER_AUTH.SIGN_IN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211028 10:38:04.856" level="INFO">Clicking element 'SubmitLogin'.</msg>
+<status status="PASS" starttime="20211028 10:38:04.855" endtime="20211028 10:38:18.112"/>
+</kw>
+<status status="PASS" starttime="20211028 10:38:04.854" endtime="20211028 10:38:18.113"/>
+</kw>
+<kw name="Conferir se a autenticação foi realizada com sucesso" library="kws_web">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${check_element}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${USER_AUTH.HEADER}</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${USER_AUTH.HEADER}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211028 10:38:18.115" endtime="20211028 10:38:18.138"/>
+</kw>
+<msg timestamp="20211028 10:38:18.138" level="INFO">${check_element} = True</msg>
+<status status="PASS" starttime="20211028 10:38:18.115" endtime="20211028 10:38:18.138"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${check_element}' == 'True'</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${USER_AUTH.HEADER}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${USER_AUTH.HEADER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211028 10:38:18.140" endtime="20211028 10:38:18.176"/>
+</kw>
+<status status="PASS" starttime="20211028 10:38:18.139" endtime="20211028 10:38:18.177"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${USER_TMP}</var>
+<arg>${USER_AUTH.DISPLAY}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20211028 10:38:18.216" level="INFO">${USER_TMP} = John Mayer</msg>
+<status status="PASS" starttime="20211028 10:38:18.177" endtime="20211028 10:38:18.216"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${check_element}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${USER_AUTH.HEADER}</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${USER_AUTH.HEADER}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211028 10:38:18.217" endtime="20211028 10:38:18.226"/>
+</kw>
+<msg timestamp="20211028 10:38:18.226" level="INFO">${check_element} = True</msg>
+<status status="PASS" starttime="20211028 10:38:18.216" endtime="20211028 10:38:18.226"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${check_element}' == 'True'</arg>
+<arg>Should Be Equal</arg>
+<arg>John Mayer</arg>
+<arg>${USER_TMP}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>John Mayer</arg>
+<arg>${USER_TMP}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20211028 10:38:18.227" endtime="20211028 10:38:18.228"/>
+</kw>
+<status status="PASS" starttime="20211028 10:38:18.227" endtime="20211028 10:38:18.228"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${USER_AUTH.BACK_TO_HOME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211028 10:38:18.230" level="INFO">Clicking element '//*[@class='icon-chevron-left']'.</msg>
+<status status="PASS" starttime="20211028 10:38:18.228" endtime="20211028 10:38:30.545"/>
+</kw>
+<status status="PASS" starttime="20211028 10:38:18.113" endtime="20211028 10:38:30.545"/>
+</kw>
+<kw name="Fechar navegador" library="hooks" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211028 10:38:31.100" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211028 10:38:30.547" endtime="20211028 10:38:31.101"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211028 10:38:31.101" endtime="20211028 10:38:31.363"/>
+</kw>
+<status status="PASS" starttime="20211028 10:38:30.546" endtime="20211028 10:38:31.364"/>
+</kw>
+<tag>AUTHENTICATE</tag>
+<status status="PASS" starttime="20211028 10:37:12.209" endtime="20211028 10:38:31.364"/>
+</test>
+<doc>Aqui consta todos os cenários de testes web.</doc>
+<status status="PASS" starttime="20211028 10:37:11.904" endtime="20211028 10:38:31.368"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">AUTHENTICATE</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Webautomation">Webautomation</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -20,7 +20,6 @@ Resource        pages/search_product_page.robot
 Resource        pages/summer_dresses_page.robot
 Resource        pages/user_registration_page.robot
 Resource        pages/user_authenticate_page.robot
-Resource        pages/summer_dresses_pages.robot
 
 #--------------------#
 #       Hooks        #
