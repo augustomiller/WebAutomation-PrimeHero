@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1 (Python 3.9.6 on darwin)" generated="20211027 20:35:49.348" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1 (Python 3.9.6 on darwin)" generated="20211028 09:57:53.621" rpa="false" schemaversion="2">
 <suite id="s1" name="Webautomation" source="/Users/maicmiller/Documents/GitHub/WebAutomation-PrimeHero/tests/webautomation.robot">
-<test id="s1-t1" name="Caso de teste06: Comprar um produto">
+<test id="s1-t1" name="Caso de teste 03: Listar Produtos por categoria">
 <kw name="Abrir navegador" library="hooks" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20211027 20:35:49.746" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/'.</msg>
-<status status="PASS" starttime="20211027 20:35:49.745" endtime="20211027 20:36:04.125"/>
+<msg timestamp="20211028 09:57:54.034" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/'.</msg>
+<status status="PASS" starttime="20211028 09:57:54.033" endtime="20211028 09:57:57.456"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20211027 20:36:04.126" endtime="20211027 20:36:04.360"/>
+<status status="PASS" starttime="20211028 09:57:57.458" endtime="20211028 09:57:57.638"/>
 </kw>
-<status status="PASS" starttime="20211027 20:35:49.744" endtime="20211027 20:36:04.360"/>
+<status status="PASS" starttime="20211028 09:57:54.032" endtime="20211028 09:57:57.638"/>
 </kw>
 <kw name="Acessar a página home do site Automation Practice" library="kws_web">
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20211027 20:36:04.363" level="INFO">Opening url 'http://automationpractice.com/'</msg>
-<status status="PASS" starttime="20211027 20:36:04.362" endtime="20211027 20:36:06.928"/>
+<msg timestamp="20211028 09:57:57.641" level="INFO">Opening url 'http://automationpractice.com/'</msg>
+<status status="PASS" starttime="20211028 09:57:57.641" endtime="20211028 09:57:57.782"/>
 </kw>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <var>${check_element}</var>
@@ -35,466 +35,74 @@
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20211027 20:36:17.528" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20211027 20:36:17.138" endtime="20211027 20:36:17.528"/>
+<msg timestamp="20211028 09:58:08.128" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211028 09:58:07.940" endtime="20211028 09:58:08.128"/>
 </kw>
-<msg timestamp="20211027 20:36:17.536" level="FAIL">Element 'My Store' did not appear in 10 seconds.</msg>
-<status status="FAIL" starttime="20211027 20:36:06.930" endtime="20211027 20:36:17.536"/>
+<msg timestamp="20211028 09:58:08.135" level="FAIL">Element 'My Store' did not appear in 10 seconds.</msg>
+<status status="FAIL" starttime="20211028 09:57:57.785" endtime="20211028 09:58:08.135"/>
 </kw>
-<msg timestamp="20211027 20:36:17.536" level="INFO">${check_element} = False</msg>
-<status status="PASS" starttime="20211027 20:36:06.928" endtime="20211027 20:36:17.537"/>
+<msg timestamp="20211028 09:58:08.135" level="INFO">${check_element} = False</msg>
+<status status="PASS" starttime="20211028 09:57:57.783" endtime="20211028 09:58:08.135"/>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <arg>'${check_element}' == 'True'</arg>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${HOME.CATEGORY_MENU_OPTIONS}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" starttime="20211027 20:36:17.537" endtime="20211027 20:36:17.537"/>
+<status status="PASS" starttime="20211028 09:58:08.135" endtime="20211028 09:58:08.136"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>${HOME.TITLE_PAGE_HOME}</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20211027 20:36:17.544" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20211027 20:36:17.538" endtime="20211027 20:36:17.545"/>
-</kw>
-<status status="PASS" starttime="20211027 20:36:04.361" endtime="20211027 20:36:17.545"/>
-</kw>
-<kw name="Clicar em &quot;Sign in&quot;" library="kws_web">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${USER.SIGN_ELEMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20211027 20:36:17.547" level="INFO">Clicking element 'xpath=//*[@class='nav']//*[@class='login']'.</msg>
-<status status="PASS" starttime="20211027 20:36:17.546" endtime="20211027 20:36:21.311"/>
-</kw>
-<status status="PASS" starttime="20211027 20:36:17.545" endtime="20211027 20:36:21.311"/>
-</kw>
-<kw name="Informar o e-mail cadastrado" library="kws_web">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${USER_AUTH.EMAIL_ADDRESS}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20211027 20:36:21.315" level="INFO">Clicking element 'id=email'.</msg>
-<status status="PASS" starttime="20211027 20:36:21.313" endtime="20211027 20:36:21.422"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${USER_AUTH.EMAIL_INPUT}</arg>
-<arg>${USER_AUTH.EMAIL_REGISTERED}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20211027 20:36:21.426" level="INFO">Typing text 'johnmayerContinum2014@fender.com' into text field 'id=email'.</msg>
-<status status="PASS" starttime="20211027 20:36:21.423" endtime="20211027 20:36:21.617"/>
-</kw>
-<status status="PASS" starttime="20211027 20:36:21.312" endtime="20211027 20:36:21.618"/>
-</kw>
-<kw name="Informar a senha cadastrada" library="kws_web">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${USER_AUTH.PASS_CLICK}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20211027 20:36:21.620" level="INFO">Clicking element 'id=passwd'.</msg>
-<status status="PASS" starttime="20211027 20:36:21.619" endtime="20211027 20:36:21.720"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${USER_AUTH.PASS_INPUT}</arg>
-<arg>${USER_AUTH.PASS_STRG}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20211027 20:36:21.722" level="INFO">Typing text '0o9i8u7y' into text field 'id=passwd'.</msg>
-<status status="PASS" starttime="20211027 20:36:21.720" endtime="20211027 20:36:21.812"/>
-</kw>
-<status status="PASS" starttime="20211027 20:36:21.618" endtime="20211027 20:36:21.812"/>
-</kw>
-<kw name="Submeter autenticação" library="kws_web">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${USER_AUTH.SIGN_IN}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20211027 20:36:21.815" level="INFO">Clicking element 'SubmitLogin'.</msg>
-<status status="PASS" starttime="20211027 20:36:21.814" endtime="20211027 20:36:23.677"/>
-</kw>
-<status status="PASS" starttime="20211027 20:36:21.813" endtime="20211027 20:36:23.678"/>
-</kw>
-<kw name="Conferir se a autenticação foi realizada com sucesso" library="kws_web">
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${check_element}</var>
-<arg>Wait Until Page Contains Element</arg>
-<arg>${USER_AUTH.HEADER}</arg>
-<arg>10s</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${USER_AUTH.HEADER}</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20211027 20:36:23.681" endtime="20211027 20:36:23.706"/>
-</kw>
-<msg timestamp="20211027 20:36:23.707" level="INFO">${check_element} = True</msg>
-<status status="PASS" starttime="20211027 20:36:23.680" endtime="20211027 20:36:23.707"/>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<arg>'${check_element}' == 'True'</arg>
-<arg>Wait Until Element Is Visible</arg>
-<arg>${USER_AUTH.HEADER}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${USER_AUTH.HEADER}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20211027 20:36:23.708" endtime="20211027 20:36:23.757"/>
-</kw>
-<status status="PASS" starttime="20211027 20:36:23.707" endtime="20211027 20:36:23.757"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${USER_TMP}</var>
-<arg>${USER_AUTH.DISPLAY}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20211027 20:36:23.797" level="INFO">${USER_TMP} = John Mayer</msg>
-<status status="PASS" starttime="20211027 20:36:23.758" endtime="20211027 20:36:23.798"/>
-</kw>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${check_element}</var>
-<arg>Wait Until Page Contains Element</arg>
-<arg>${USER_AUTH.HEADER}</arg>
-<arg>10s</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${USER_AUTH.HEADER}</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20211027 20:36:23.799" endtime="20211027 20:36:23.808"/>
-</kw>
-<msg timestamp="20211027 20:36:23.808" level="INFO">${check_element} = True</msg>
-<status status="PASS" starttime="20211027 20:36:23.798" endtime="20211027 20:36:23.808"/>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<arg>'${check_element}' == 'True'</arg>
-<arg>Should Be Equal</arg>
-<arg>John Mayer</arg>
-<arg>${USER_TMP}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>John Mayer</arg>
-<arg>${USER_TMP}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20211027 20:36:23.809" endtime="20211027 20:36:23.809"/>
-</kw>
-<status status="PASS" starttime="20211027 20:36:23.808" endtime="20211027 20:36:23.809"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${USER_AUTH.BACK_TO_HOME}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20211027 20:36:23.811" level="INFO">Clicking element '//*[@class='icon-chevron-left']'.</msg>
-<status status="PASS" starttime="20211027 20:36:23.810" endtime="20211027 20:36:28.325"/>
-</kw>
-<status status="PASS" starttime="20211027 20:36:23.678" endtime="20211027 20:36:28.326"/>
-</kw>
-<kw name="Acessar a página home do site Automation Practice" library="kws_web">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20211027 20:36:28.328" level="INFO">Opening url 'http://automationpractice.com/'</msg>
-<status status="PASS" starttime="20211027 20:36:28.327" endtime="20211027 20:36:32.575"/>
-</kw>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${check_element}</var>
-<arg>Wait Until Page Contains Element</arg>
-<arg>${HOME.TITLE_PAGE_HOME}</arg>
-<arg>10s</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${HOME.TITLE_PAGE_HOME}</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20211027 20:36:43.154" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20211027 20:36:42.770" endtime="20211027 20:36:43.154"/>
+<msg timestamp="20211028 09:58:08.338" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211028 09:58:08.143" endtime="20211028 09:58:08.338"/>
 </kw>
-<msg timestamp="20211027 20:36:43.155" level="FAIL">Element 'My Store' did not appear in 10 seconds.</msg>
-<status status="FAIL" starttime="20211027 20:36:32.577" endtime="20211027 20:36:43.155"/>
+<msg timestamp="20211028 09:58:08.343" level="FAIL">Title should have been 'My Store' but was '508 Resource Limit Is Reached'.</msg>
+<status status="FAIL" starttime="20211028 09:58:08.136" endtime="20211028 09:58:08.344"/>
 </kw>
-<msg timestamp="20211027 20:36:43.155" level="INFO">${check_element} = False</msg>
-<status status="PASS" starttime="20211027 20:36:32.576" endtime="20211027 20:36:43.155"/>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<arg>'${check_element}' == 'True'</arg>
-<arg>Wait Until Element Is Visible</arg>
-<arg>${HOME.CATEGORY_MENU_OPTIONS}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" starttime="20211027 20:36:43.155" endtime="20211027 20:36:43.156"/>
-</kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>${HOME.TITLE_PAGE_HOME}</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20211027 20:36:43.163" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20211027 20:36:43.156" endtime="20211027 20:36:43.163"/>
-</kw>
-<status status="PASS" starttime="20211027 20:36:28.327" endtime="20211027 20:36:43.164"/>
+<status status="FAIL" starttime="20211028 09:57:57.639" endtime="20211028 09:58:08.345"/>
 </kw>
 <kw name="Passar o mouse por cima da categoria &quot;Woman&quot; no menu principal superior de categorias" library="kws_web">
-<kw name="Mouse Over" library="SeleniumLibrary">
-<arg>${HOME.WOMAN_CATEGORY}</arg>
-<doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<msg timestamp="20211027 20:36:43.167" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id='block_top_menu']//*[@href="http://automationpractice.com/index.php?id_category=3&amp;controller=category"]'.</msg>
-<status status="PASS" starttime="20211027 20:36:43.165" endtime="20211027 20:36:43.458"/>
-</kw>
-<status status="PASS" starttime="20211027 20:36:43.165" endtime="20211027 20:36:43.459"/>
+<status status="NOT RUN" starttime="20211028 09:58:08.345" endtime="20211028 09:58:08.346"/>
 </kw>
 <kw name="Clicar na sub categoria &quot;Summer Dresses&quot;" library="kws_web">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${HOME.SUMMER_DRESSES_CATEGORY}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20211027 20:36:43.464" level="INFO">Clicking element 'xpath=//*[@id='block_top_menu']//*[@href="http://automationpractice.com/index.php?id_category=11&amp;controller=category"]'.</msg>
-<status status="PASS" starttime="20211027 20:36:43.461" endtime="20211027 20:36:49.730"/>
-</kw>
-<status status="PASS" starttime="20211027 20:36:43.460" endtime="20211027 20:36:49.730"/>
+<status status="NOT RUN" starttime="20211028 09:58:08.346" endtime="20211028 09:58:08.346"/>
 </kw>
 <kw name="Conferir se os produtos da sub-categoria &quot;Summer Dresses&quot; foram mostrados na página" library="kws_web">
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${check_element}</var>
-<arg>Wait Until Page Contains Element</arg>
-<arg>${SUMMER_CATEGORY.ID_FORM}</arg>
-<arg>10s</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${SUMMER_CATEGORY.ID_FORM}</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20211027 20:37:00.195" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20211027 20:36:59.910" endtime="20211027 20:37:00.195"/>
-</kw>
-<msg timestamp="20211027 20:37:00.197" level="FAIL">Element 'account-creation_form' did not appear in 10 seconds.</msg>
-<status status="FAIL" starttime="20211027 20:36:49.733" endtime="20211027 20:37:00.197"/>
-</kw>
-<msg timestamp="20211027 20:37:00.198" level="INFO">${check_element} = False</msg>
-<status status="PASS" starttime="20211027 20:36:49.732" endtime="20211027 20:37:00.198"/>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<arg>'${check_element}' == 'True'</arg>
-<arg>Title Should Be</arg>
-<arg>${SUMMER_CATEGORY.TITLE}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" starttime="20211027 20:37:00.198" endtime="20211027 20:37:00.198"/>
-</kw>
-<status status="PASS" starttime="20211027 20:36:49.731" endtime="20211027 20:37:00.199"/>
-</kw>
-<kw name="Adicionar o produto no carrinho" library="kws_web">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${SUMMER.FRAME_PRODUTO}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20211027 20:37:00.201" level="INFO">Clicking element '//*[contains(text(),'Printed Chiffon Dress')]'.</msg>
-<status status="PASS" starttime="20211027 20:37:00.200" endtime="20211027 20:37:03.209"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${SUMMER.ADD_TO_CART}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20211027 20:37:03.211" level="INFO">Clicking element '//*[@id='add_to_cart']//*[@name='Submit']'.</msg>
-<status status="PASS" starttime="20211027 20:37:03.209" endtime="20211027 20:37:03.304"/>
-</kw>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${check_element}</var>
-<arg>Wait Until Page Contains Element</arg>
-<arg>${SUMMER.PROCEED_TO_SUMMARY}</arg>
-<arg>10s</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${SUMMER.PROCEED_TO_SUMMARY}</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20211027 20:37:03.306" endtime="20211027 20:37:03.331"/>
-</kw>
-<msg timestamp="20211027 20:37:03.331" level="INFO">${check_element} = True</msg>
-<status status="PASS" starttime="20211027 20:37:03.304" endtime="20211027 20:37:03.331"/>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<arg>'${check_element}' == 'True'</arg>
-<arg>Wait Until Element Is Visible</arg>
-<arg>${SUMMER.PROCEED_TO_SUMMARY}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${SUMMER.PROCEED_TO_SUMMARY}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20211027 20:37:03.333" endtime="20211027 20:37:04.263"/>
-</kw>
-<status status="PASS" starttime="20211027 20:37:03.332" endtime="20211027 20:37:04.263"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${SUMMER.PROCEED_TO_SUMMARY}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20211027 20:37:04.264" level="INFO">Clicking element '//*[@class='button-container']//span[contains(text(),'Proceed to checkout')]'.</msg>
-<status status="PASS" starttime="20211027 20:37:04.263" endtime="20211027 20:37:06.413"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${SUMMER.PROCEED_TO_ADDRESS}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20211027 20:37:06.414" level="INFO">Clicking element '//*[@class='cart_navigation clearfix']//*'.</msg>
-<status status="PASS" starttime="20211027 20:37:06.413" endtime="20211027 20:37:08.609"/>
-</kw>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${check_element}</var>
-<arg>Wait Until Page Contains Element</arg>
-<arg>${SUMMER.PROCEED_TO_SHIPPING}</arg>
-<arg>10s</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${SUMMER.PROCEED_TO_SHIPPING}</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20211027 20:37:08.611" endtime="20211027 20:37:08.629"/>
-</kw>
-<msg timestamp="20211027 20:37:08.629" level="INFO">${check_element} = True</msg>
-<status status="PASS" starttime="20211027 20:37:08.610" endtime="20211027 20:37:08.629"/>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<arg>'${check_element}' == 'True'</arg>
-<arg>Wait Until Element Is Visible</arg>
-<arg>${SUMMER.PROCEED_TO_SHIPPING}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${SUMMER.PROCEED_TO_SHIPPING}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20211027 20:37:08.630" endtime="20211027 20:37:08.651"/>
-</kw>
-<status status="PASS" starttime="20211027 20:37:08.629" endtime="20211027 20:37:08.651"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${SUMMER.PROCEED_TO_SHIPPING}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20211027 20:37:08.653" level="INFO">Clicking element '//*[@class='cart_navigation clearfix']//*[@name='processAddress']'.</msg>
-<status status="PASS" starttime="20211027 20:37:08.652" endtime="20211027 20:37:10.609"/>
-</kw>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${check_element}</var>
-<arg>Wait Until Page Contains Element</arg>
-<arg>${SUMMER.TERMS_OS_SERVICE}</arg>
-<arg>10s</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${SUMMER.TERMS_OS_SERVICE}</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20211027 20:37:10.610" endtime="20211027 20:37:10.628"/>
-</kw>
-<msg timestamp="20211027 20:37:10.628" level="INFO">${check_element} = True</msg>
-<status status="PASS" starttime="20211027 20:37:10.609" endtime="20211027 20:37:10.628"/>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<arg>'${check_element}' == 'True'</arg>
-<arg>Wait Until Element Is Visible</arg>
-<arg>${SUMMER.TERMS_OS_SERVICE}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${SUMMER.TERMS_OS_SERVICE}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20211027 20:37:10.630" endtime="20211027 20:37:10.653"/>
-</kw>
-<status status="PASS" starttime="20211027 20:37:10.629" endtime="20211027 20:37:10.653"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${SUMMER.TERMS_OS_SERVICE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20211027 20:37:10.655" level="INFO">Clicking element '//*[@class='checkbox']//*'.</msg>
-<status status="PASS" starttime="20211027 20:37:10.654" endtime="20211027 20:37:10.720"/>
-</kw>
-<status status="PASS" starttime="20211027 20:37:00.199" endtime="20211027 20:37:10.720"/>
-</kw>
-<kw name="Escolher metodo de pagamento" library="kws_web">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${SUMMER.PROCEED_TO_PAYMENT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20211027 20:37:10.723" level="INFO">Clicking element '//*[@class='cart_navigation clearfix']//*[@type='submit']'.</msg>
-<status status="PASS" starttime="20211027 20:37:10.722" endtime="20211027 20:37:12.742"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${SUMMER.PAY_BY_BANK}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20211027 20:37:12.743" level="INFO">Clicking element '//*[contains(text(),'Pay by bank wire')]'.</msg>
-<status status="PASS" starttime="20211027 20:37:12.742" endtime="20211027 20:37:14.116"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${SUMMER.CONFIRM_ORDER}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20211027 20:37:14.120" level="INFO">Clicking element '//*[@class='button btn btn-default button-medium']//span[contains(text(),'I confirm my order')]'.</msg>
-<status status="PASS" starttime="20211027 20:37:14.116" endtime="20211027 20:37:16.745"/>
-</kw>
-<status status="PASS" starttime="20211027 20:37:10.721" endtime="20211027 20:37:16.745"/>
-</kw>
-<kw name="Confirmar a ordem de pagamento" library="kws_web">
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${check_element}</var>
-<arg>Wait Until Page Contains Element</arg>
-<arg>${SUMMER.ORDER_COMPLETE}</arg>
-<arg>10s</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${SUMMER.ORDER_COMPLETE}</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20211027 20:37:16.748" endtime="20211027 20:37:16.772"/>
-</kw>
-<msg timestamp="20211027 20:37:16.772" level="INFO">${check_element} = True</msg>
-<status status="PASS" starttime="20211027 20:37:16.748" endtime="20211027 20:37:16.772"/>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<arg>'${check_element}' == 'True'</arg>
-<arg>Wait Until Element Is Visible</arg>
-<arg>${SUMMER.ORDER_COMPLETE}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${SUMMER.ORDER_COMPLETE}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20211027 20:37:16.775" endtime="20211027 20:37:16.807"/>
-</kw>
-<status status="PASS" starttime="20211027 20:37:16.773" endtime="20211027 20:37:16.807"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${ORDER_COMPLETE}</var>
-<arg>${SUMMER.ORDER_COMPLETE}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20211027 20:37:16.845" level="INFO">${ORDER_COMPLETE} = Your order on My Store is complete.</msg>
-<status status="PASS" starttime="20211027 20:37:16.808" endtime="20211027 20:37:16.845"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>Your order on My Store is complete.</arg>
-<arg>${ORDER_COMPLETE}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20211027 20:37:16.846" endtime="20211027 20:37:16.847"/>
-</kw>
-<status status="PASS" starttime="20211027 20:37:16.746" endtime="20211027 20:37:16.847"/>
-</kw>
-<kw name="Visualizar a ordem na lista de ordens" library="kws_web">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${SUMMER.GO_TO_ORDERS}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20211027 20:37:16.851" level="INFO">Clicking element '//*[@class='button-exclusive btn btn-default']'.</msg>
-<status status="PASS" starttime="20211027 20:37:16.849" endtime="20211027 20:37:36.870"/>
-</kw>
-<status status="PASS" starttime="20211027 20:37:16.847" endtime="20211027 20:37:36.871"/>
+<status status="NOT RUN" starttime="20211028 09:58:08.347" endtime="20211028 09:58:08.347"/>
 </kw>
 <kw name="Fechar navegador" library="hooks" type="TEARDOWN">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20211027 20:37:37.034" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20211027 20:37:36.873" endtime="20211027 20:37:37.034"/>
+<msg timestamp="20211028 09:58:08.544" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211028 09:58:08.349" endtime="20211028 09:58:08.544"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20211027 20:37:37.035" endtime="20211027 20:37:37.380"/>
+<status status="PASS" starttime="20211028 09:58:08.544" endtime="20211028 09:58:08.662"/>
 </kw>
-<status status="PASS" starttime="20211027 20:37:36.872" endtime="20211027 20:37:37.380"/>
+<status status="PASS" starttime="20211028 09:58:08.348" endtime="20211028 09:58:08.662"/>
 </kw>
-<tag>BUY_A_PRODUCT</tag>
-<status status="PASS" starttime="20211027 20:35:49.743" endtime="20211027 20:37:37.381"/>
+<tag>LIST_PRODUCTS</tag>
+<status status="FAIL" starttime="20211028 09:57:54.030" endtime="20211028 09:58:08.663">Title should have been 'My Store' but was '508 Resource Limit Is Reached'.</status>
 </test>
 <doc>Aqui consta todos os cenários de testes web.</doc>
-<status status="PASS" starttime="20211027 20:35:49.350" endtime="20211027 20:37:37.384"/>
+<status status="FAIL" starttime="20211028 09:57:53.623" endtime="20211028 09:58:08.666"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">BUY_A_PRODUCT</stat>
+<stat pass="0" fail="1" skip="0">LIST_PRODUCTS</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Webautomation">Webautomation</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Webautomation">Webautomation</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20211028 09:57:54.011" level="ERROR">Error in file '/Users/maicmiller/Documents/GitHub/WebAutomation-PrimeHero/resources/package.robot' on line 20: Resource file 'pages/summer_dresses_page.robot' does not exist.</msg>
 </errors>
 </robot>

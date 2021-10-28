@@ -17,3 +17,7 @@ Documentation       Aqui consta todos as elementos e variáveis
 ...     CONFIRM_ORDER=//*[@class='button btn btn-default button-medium']//span[contains(text(),'I confirm my order')]
 ...     ORDER_COMPLETE=//*[@class='cheque-indent']//*[contains(text(),'Your order on My Store is complete.')]
 ...     GO_TO_ORDERS=//*[@class='button-exclusive btn btn-default']
+
+&{SUMMER_CATEGORY}
+...     ID_FORM=account-creation_form
+...     TITLE=Summer Dresses - My Store

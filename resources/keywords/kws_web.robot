@@ -51,6 +51,11 @@ Clicar em "Sign in"
     Click Element       ${USER.SIGN_ELEMENT}
 
 informar um e-mail válido
+
+    ${check_element}=  Run Keyword and Return Status     Wait Until Page Contains Element       ${USER.FORM_ACCOUNT}  10s
+    Run Keyword If     '${check_element}' == 'True'      Wait until Element is Visible          ${USER.FORM_ACCOUNT}       
+ 
+
     Wait until Element is Visible       ${USER.FORM_ACCOUNT}
     Input Text                          ${USER.ID_INPUT_EMAIL}         ${USER.EMAIL}
 
