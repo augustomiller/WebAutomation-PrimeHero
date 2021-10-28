@@ -8,7 +8,7 @@ Documentation       Aqui consta todos as elementos e variáveis
 &{SUMMER}
 ...     FRAME_PRODUTO=//*[contains(text(),'Printed Chiffon Dress')]
 ...     ADD_TO_CART=//*[@id='add_to_cart']//*[@name='Submit']
-...     PROCEED_TO_SUMMARY=//*[@class='button-container']//span[contains(text(),'Proceed to checkout')]
+...     PROCEED_TO_SUMMARY=//*[@class='btn btn-default button button-medium']//*
 ...     PROCEED_TO_ADDRESS=//*[@class='cart_navigation clearfix']//*
 ...     PROCEED_TO_SHIPPING=//*[@class='cart_navigation clearfix']//*[@name='processAddress']
 ...     TERMS_OS_SERVICE=//*[@class='checkbox']//*

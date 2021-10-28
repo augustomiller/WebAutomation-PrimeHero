@@ -133,12 +133,13 @@ Adicionar o produto no carrinho
     Click Element      ${SUMMER.FRAME_PRODUTO}
     Click Element      ${SUMMER.ADD_TO_CART}
     ${check_element}=  Run Keyword and Return Status     Wait Until Page Contains Element       ${SUMMER.PROCEED_TO_SUMMARY}  10s
-    Run Keyword If     '${check_element}' == 'True'     Wait Until Element Is Visible           ${SUMMER.PROCEED_TO_SUMMARY}
-    Click Element      ${SUMMER.PROCEED_TO_SUMMARY}     
+    Run Keyword If     '${check_element}' == 'True'      Wait Until Element Is Visible           ${SUMMER.PROCEED_TO_SUMMARY}
+    Click Element      ${SUMMER.PROCEED_TO_SUMMARY}
+
     Click Element      ${SUMMER.PROCEED_TO_ADDRESS}
 
     ${check_element}=  Run Keyword and Return Status     Wait Until Page Contains Element       ${SUMMER.PROCEED_TO_SHIPPING}  10s
-    Run Keyword If     '${check_element}' == 'True'     Wait Until Element Is Visible           ${SUMMER.PROCEED_TO_SHIPPING}       
+    Run Keyword If     '${check_element}' == 'True'      Wait Until Element Is Visible           ${SUMMER.PROCEED_TO_SHIPPING}       
     Click Element      ${SUMMER.PROCEED_TO_SHIPPING}
     
     ${check_element}=  Run Keyword and Return Status     Wait Until Page Contains Element       ${SUMMER.TERMS_OS_SERVICE}  10s

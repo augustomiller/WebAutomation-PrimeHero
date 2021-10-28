@@ -18,7 +18,7 @@ Documentation       Aqui consta todos as elementos e variáveis
 ...     PHONE=+12125650000
 ...     PHONE_MOBILE=(808) 266-1222
 ...     ID_ALIAS=Nova Iorque, Nova York, EUA
-...     EMAIL=johnmayerContinum1992@fender.com
+...     EMAIL=johnmayerContinum1991@fender.com
 ...     SIGN_ELEMENT=xpath=//*[@class='nav']//*[@class='login']
 ...     FORM_ACCOUNT=id=create-account_form
 ...     ID_INPUT_EMAIL=id=email_create
